@@ -1,0 +1,14 @@
+/*
+* Filename: 	external.html
+* Description: 	An External CSS Stylesheet
+* Author:       Luke Sathrum
+*/
+
+*{
+	font-family:Arial,Helvetica,sans-serif;
+}
+#copyright{
+	text-align: center;
+	font-style: italic;
+}
+

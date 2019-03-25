@@ -1,0 +1,46 @@
+.toolBar {
+  background-color: #FF1100;
+}
+#topTitle {
+  color: red;
+}
+header + article {
+  background-color: grey;
+}
+nav {
+  background-color: yellow;
+}
+h2 {
+  background-color: red !important;
+  color: purple;
+}
+section h1 {
+  font-style: cursive;
+}
+section p {
+  word-spacing: 2em;
+}
+a:hover, nav h2:hover{
+  color: #00FFFF;
+}
+a:visited {
+  font-style: monospace;
+}
+a {
+  background-color: #001100;
+  font-family: cursive;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 16;
+  line-height: 2;
+  text-indent: inherit;
+  text-align: center;
+  text-decoration: line-through;
+  text-shadow: 5;
+  width: auto;
+  height: auto;
+  margin-left: auto;
+  padding: 50,30,30,30;
+  border: 10;
+
+}
