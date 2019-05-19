@@ -11,19 +11,16 @@ html{
 }
 #header {
   width: 100%;
-  background-color: coral;
+  background-color: #F1F1F1;
   text-align: center;
   padding: 20px;
 }
 /* The navbar container */
 #topnav {
   width: 100%;
+  float: right;
   overflow: hidden;
   background-color: coral;
-  padding: 1px;
-}
-button{
-  float: right;
 }
 .side{
   width: 15%;

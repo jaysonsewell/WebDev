@@ -1,12 +1,40 @@
 
 var coins;
-var hero[];
-
-// function ad(){
+var heroArray = [];
+//create a map every month
+//bot accounts mixed with players and winner gets prize.
+//tile boards hexagon(masterofmonsters)
+//night and day buffs.  longrange vs shortrange
+//terrian buffs.
+//monsters/heros can upgrade lvl
+// function ad(){}
+// ads for ig accounts
 //   //show ad
-// }
-function dailyPrize(){
+$('#myAccountForm').hide();
+$('#createAccount').on('click', createAccount);
 
+function login(){
+  $('#myAccountForm').show();
+  //check for auth.
+  //if(){}
+  //check server and display contents
+  //homescreen
+  
+}
+
+function createAccount(){
+  $('#myAccountForm').show();
+  //create account object{
+  //   userName: 'x';
+  //   password: 'x';
+  //   heroArray: '[]';
+  //   coins:  'x';
+  //   gameFilterMode: 'x';
+  //}
+
+}
+
+function dailyPrize(){
   // ad();
   let random = Math.floor((Math.random() * 3) + 1);
   if(random == 1){
@@ -19,54 +47,70 @@ function dailyPrize(){
 }
 function buyObject(){
   let random = Math.floor((Math.random() * 10) + 1);
-  //var userScore = score.value;
 
 	switch(random){
 		case 1:
-    //prize = heroObject(marader,3,2);
-			alert("D for you!");
+    //prize = heroObject(marader,3,2,night);
+			alert("hero obtained!! quote");
 		break;
 		case 2:
-    //  prize = heroObject();
-			alert("C for you!");
+    //  prize = heroObject(druid,1,4,day);
+			alert("hero obtained");
 		break;
 		case 3:
-    //  prize = heroObject();
-			alert("B for you!");
+    //  prize = heroObject(wizard,1,4,day);
+			alert("hero obtained!! luck favors the prepared");
 		break;
 		case 4:
-    //  prize = heroObject();
-			alert("A for you!");
+    //  prize = heroObject(paledin,3,3,day);
+			alert("hero obtained");
 		break;
     case 5:
-    //  prize = heroObject();
-			alert("A for you!");
+    //  prize = heroObject(rogue,3,2,night);
+			alert("hero obtained");
 		break;
     case 6:
-      //prize = heroObject();
-			alert("A for you!");
+      //prize = heroObject(zombie,1,1,night);
+			alert("hero obtained!!!  Aaarrgh");
 		break;
     case 7:
-      //prize = heroObject();
-			alert("A for you!");
+      //prize = heroObject(elf,3,3,neutral);
+			alert("hero obtained");
 		break;
     case 8:
-      //prize = heroObject();
-			alert("A for you!");
+      //prize = heroObject(dragon,5,3,neutral);
+			alert("hero obtained");
 		break;
     case 9:
-			alert("A for you!");
+//      prize = heroObject(fred,2,2,neutral);
+			alert("hero obtained");
 		break;
 		default:
-			alert("Thats not a case!");
+			alert("error");
 		break;
 	}
-  hero.push(prize);
+  heroArray.push(prize);
 }
-function heroObject(n,a,h){
+
+function game(x,y){
+  //today's prize fights if same bring next on stack
+  if(x == y){
+    //animation
+    //x.heroArray[0] fights y.heroArray[0]
+    //
+    if(x.heroArray[0] == y.heroArray[0]){
+      //x.heroArray[0].pop();
+      //y.heroArray[0].pop();
+
+    }
+  }
+}
+function heroObject(n,a,h,p,bp){
   return {heroName: n,
           attack: a,
-          health: h
+          health: h,
+          power: p,
+          boardPosition: bp
         }
 }
 function writeHeroList(){
