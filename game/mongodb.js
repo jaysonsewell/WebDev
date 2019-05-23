@@ -1,59 +1,38 @@
+var express = require("express");
+var app = express();
 var mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/posts");
-mongoose.connect("mongodb+srv://dbUser:Cheese11%21@clusterdb-lglzi.mongodb.net/test?retryWrites=true")
+//mongoose.connect("mongodb://localhost/");
+//mongoose.connect("mongodb+srv://dbUser:Cheese11%21@clusterdb-lglzi.mongodb.net/test?retryWrites=true")
 
-var accountSchema = new mongoose.Schema({
+var userSchema = new mongoose.Schema({
     userName: String,
     password: String,
-    heroArray: [String,Number,Number,String],
+    heroArray: [String,Number,String,Number],
     coins: Number,
-    gameFilterMode: String
+//    gameFilterMode: String
 });
-
 var heroSchema = new mongoose.Schema({
     name: String,
     attack: Number,
-    health: Number,
-    power: String
+    power: String,
+    lvl: Number
 });
-var Book = mongoose.model("Book", bookSchema);
-var firstBook = new Book({
-    title: "first book",
-    author: "jay"
+var User = mongoose.model("User", userSchema);
+var firstUser = new User({
+  name: 'first User',
+  password: 'passWord'
 });
-firstBook.save(function(err, book){
+firstUser.save(function(err, hero){
     if(err){
         console.log("Wrong")
     } else {
         console.log("Saved")
-        console.log(book);
+        console.log(hero);
     }
 });
 
 ///////////////////////////
 
-var express = require("express");
-var app = express();
-var mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/book_app");
-var bookSchema = new mongoose.Schema({
-    title: String,
-    author: String,
-    desc: String
-});
-var Book = mongoose.model("Book", bookSchema);
-// var firstBook = new Book({
-//     title: "first book",
-//     author: "jay"
-// });
-// firstBook.save(function(err, book){
-//     if(err){
-//         console.log("Wrong")
-//     } else {
-//         console.log("Saved")
-//         console.log(book);
-//     }
-// });
 var bodyParser = require("body-parser");
 // var posts = [
 //     {title: "Post 1", author: "Susy"},
@@ -66,36 +45,35 @@ app.set("view engine", "ejs");
 
 //RESTful Routes and CRUD
 app.get("/", function(req,res){
-   res.render("home");
+   res.render("posts");
 });
 app.post("/addpost", function(req, res){
     //var element = {};
     //element.title = req.body.newpost
    // element.author = req.body.newpost2
-    var name = req.body.name;
-    var attack = req.body.attack;
-    var health = req.body.health;
-    var power = req.body.power;
-    var newHero = {name: name, attack: attack, health: health, power: power}
-    Hero.create(newHero, function(err, newlyCreated){
-        if(err){
-            console.log(err);
-        } else {
-            res.redirect("/posts");
-        }
+    // var health = req.body.health;
+    // var power = req.body.power;
+    var newUser = {name: name, password: password}
+    User.create(newUser, function(err, newlyCreated){
+      var name = req.body.name;
+      var password = req.body.password;
+      if(err){
+        console.log(err);
+      } else {
+        res.redirect("/posts");
+      }
     });
  //   Book.push(element);
    // posts.push(element);
-
 });
 
 app.get("/posts/:id", function(req,res){
     var post = req.params.post;
-    Book.findById(req.params.id, function(err, foundBook){
+    Hero.findById(req.params.id, function(err, foundHero){
         if(err){
             console.log(err);
         } else {
-            res.render("show", {post: foundBook});
+            res.render("show", {post: foundHero});
         }
     });
     //res.send("You fell for this " + thing);
@@ -103,15 +81,17 @@ app.get("/posts/:id", function(req,res){
 });
 
 app.get("/posts", function(req,res){
-    Book.find({}, function(err, allBooks){
+    Hero.find({}, function(err, allHero){
         if(err){
             console("Wrong");
         } else {
-            res.render("posts", {posts:allBooks});
+            res.render("posts", {posts:allHero});
         }
     });
 });
 
-app.listen(process.env.PORT, process.env.IP, function(){
-    console.log("Server is Listening");
-});
+app.listen(3000);
+
+// app.listen(process.env.PORT, process.env.IP, function(){
+//     console.log("Server is Listening");
+// });
