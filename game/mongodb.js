@@ -47,7 +47,7 @@ app.set("view engine", "ejs");
 app.get("/", function(req,res){
    res.render("posts");
 });
-app.post("/addpost", function(req, res){
+app.post("/createAccount", function(req, res){
     //var element = {};
     //element.title = req.body.newpost
    // element.author = req.body.newpost2
@@ -90,7 +90,9 @@ app.get("/posts", function(req,res){
     });
 });
 
-app.listen(3000);
+app.listen(3000,function(){
+    console.log("Server is Listening");
+});
 
 // app.listen(process.env.PORT, process.env.IP, function(){
 //     console.log("Server is Listening");

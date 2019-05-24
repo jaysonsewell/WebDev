@@ -1,25 +1,10 @@
 <% include partials/header %>
 
-<h1>The Posts Page</h1>
+<h1>Create New User Page</h1>
 
-<% for (var i = 0; i < heroArray.length; i++){ %>
-    <li>
-        <%= heroArray[i].name %> - <strong><%= heroArray[i].attack %></strong>
-    </li>
-<% } %>
-<% heroArray.forEach(function(post){ %>
-    <li>
-        <%= heroArray.name %> - <strong><%= heroArray.attack %></strong>
-        <p>
-            <a href="/posts/<%= heroArray.power %>">Info</a>
-        </p>
-    </li>
-<% }) %>
-
-<form action="/addpost" method="POST">
-    <input type="text" name="name" placeholder="name">
-    <input type="text" name="attack" placeholder="attack">
-    <input type="text" name="power" placeholder="power">
+<form action="/createAccount" method="POST">
+    <input type="text" name="name" placeholder="userName">
+    <input type="password" name="attack" placeholder="password">
     <button>I made a new post!!</button>
 </form>
 

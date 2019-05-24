@@ -11,27 +11,27 @@ var heroArray = [];
 // ads for ig accounts
 //   //show ad
 $('#myAccountForm').hide();
-$('#createAccount').on('click', createAccount);
-$('#user').html(userName);
+//$('#createAccount').on('click', createAccount);
+//$('#user').html(userName);
 
-function login(){
-  $('#myAccountForm').show();
-  //check for auth.
-  //if(){}
-  //check server and display contents
-  //homescreen
-}
+// function login(){
+//   $('#myAccountForm').show();
+//   check for auth.
+//   if(){}
+//   check server and display contents
+//   homescreen
+// }
 
-function createAccount(){
-  $('#myAccountForm').show();
-  //create account object{
-  //   userName: 'x';
-  //   password: 'x';
-  //   heroArray: '[]';
-  //   coins:  'x';
-  //   gameFilterMode: 'x';
-  //}
-}
+// function createAccount(){
+//   $('#myAccountForm').show();
+//   create account object{
+//     userName: 'x';
+//     password: 'x';
+//     heroArray: '[]';
+//     coins:  'x';
+//     gameFilterMode: 'x';
+//   }
+// }
 
 function dailyPrize(){
   // ad();
