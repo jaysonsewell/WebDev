@@ -2,7 +2,42 @@ var express = require("express");
 var app = express();
 var mongoose = require("mongoose");
 //mongoose.connect("mongodb://localhost/");
-//mongoose.connect("mongodb+srv://dbUser:Cheese11%21@clusterdb-lglzi.mongodb.net/test?retryWrites=true")
+var url = 'mongodb+srv://dbUser:Cheese11%21@clusterdb-lglzi.mongodb.net/test?retryWrites=true';
+mongoose.connect(url);
+// mongoose.connection
+// .once('open', () => console.log("connected"))
+// .on('error', (error) => {
+//   console.log("error");
+// });
+const username = process.argv[2].split('=')[1]
+console.log(`hello, ${username}`)
+
+// async function createUser(username) {
+//   return new User({
+//     username,
+//     created: Date.now()
+//   }).save()
+// }
+//
+// async function findUser(username) {
+//   return await User.findOne({ username })
+// }
+//
+// ;(async () => {
+//   const connector = mongoose.connect(url)
+//   const username = process.argv[2].split('=')[1]
+//
+//   let user = await connector.then(async () => {
+//     return findUser(username)
+//   })
+//
+//   if (!user) {
+//     user = await createUser(username)
+//   }
+//
+//   console.log(user)
+//   process.exit(0)
+// })()
 
 var userSchema = new mongoose.Schema({
     userName: String,
@@ -30,8 +65,7 @@ firstUser.save(function(err, hero){
         console.log(hero);
     }
 });
-
-///////////////////////////
+module.exports = userSchema
 
 var bodyParser = require("body-parser");
 // var posts = [
