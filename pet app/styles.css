@@ -1,0 +1,46 @@
+html{
+  background-color: skyblue;
+}
+#container{
+  display: flex;
+  flex-wrap: wrap;
+}
+#container > div{
+  display: flex;
+  flex: wrap;
+}
+#header {
+  width: 100%;
+  background-color: #F1F1F1;
+  text-align: center;
+  padding: 20px;
+}
+/* The navbar container */
+#topnav {
+  width: 100%;
+  float: right;
+  overflow: hidden;
+  background-color: coral;
+}
+.side{
+  width: 15%;
+  background-color: aqua;
+}
+#main{
+  width: 70%;
+  height: 500px;
+  background-color: skyblue;
+}
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other on smaller screens (600px wide or less) */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+
+#footer {
+  width: 100%;
+  background-color: coral;
+  text-align: center;
+  padding: 10px;
+}
